@@ -1,0 +1,27 @@
+# AutoCare Pro — Automotive Service Booking App
+# ================================================
+# These are the packages actually imported by main.py, db.py, api_server.py,
+# and streamlit_app.py. The previous requirements.txt listed many heavy
+# frameworks (crewai, pyautogen, semantic-kernel, houndify, twilio, whisper,
+# elevenlabs, openai, anthropic, langchain) that are NOT imported anywhere in
+# the codebase — the "ARIA / APEX / NEXUS / VOICE" agent names are simulated
+# in plain Python for demo purposes, not live calls to those services.
+# If you want to wire in real LLM/voice providers, add the relevant SDK here
+# and update main.py / api_server.py accordingly (see README "Going further").
+
+# ─── Core app ──────────────────────────────────────────────────────────────
+streamlit>=1.38.0
+pandas>=2.0.0
+
+# ─── API server ────────────────────────────────────────────────────────────
+fastapi>=0.110.0
+uvicorn>=0.30.0
+pydantic>=2.0.0
+
+# ─── Database ──────────────────────────────────────────────────────────────
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.0      # only needed if using Postgres (DATABASE_URL)
+python-dotenv>=1.0.0
+
+# ─── Pitch deck generator (optional, only for generate_pitch_deck.py) ──────
+python-pptx>=0.6.21
